@@ -1,0 +1,114 @@
+@keyframes changeOrder {
+    from { z-index: 6;}
+    to { z-index: 1; }
+  }
+  
+  label {
+      width: 200px;
+      height: 55px;
+    animation: changeOrder 2.0s infinite linear;
+    background: #ddd;
+    cursor: pointer;
+    display: block;
+    object-position: center;
+    padding: 10px;
+    position: absolute;
+    top: 100px;
+    user-select: none;
+  }
+  
+  label:nth-of-type(1) { animation-delay: -0.2s; }
+  label:nth-of-type(2) { animation-delay: -0.4s; }
+  label:nth-of-type(3) { animation-delay: -0.6s; }
+  label:nth-of-type(4) { animation-delay: -0.8s; }
+  label:nth-of-type(5) { animation-delay: -1.0s; }
+  label:nth-of-type(6) { animation-delay: -1.2s; }
+  
+  .random {
+    left: 10px;
+    position: absolute;
+    top: 10px;
+    width: 100%;
+  }
+  
+  #d1:checked ~ p span::before { content: "Олег и Яша VS        Илья и Андрей"; }
+  #d2:checked ~ p span::before { content: "Олег и Илья  VS      Яша и Андрей"; }
+  #d3:checked ~ p span::before { content: "Олег и Андрей VS      Яша и Илья"; }
+  #d4:checked ~ p span::before { content: "Яша и Илья    VS    Олег и Андрей"; }
+  #d5:checked ~ p span::before { content: "Яша и Андрей   VS    Олег и Илья"; }
+  #d6:checked ~ p span::before { content: "Илья и Андрей    VS   Олег и Яша"; }
+
+
+  /*DECORATION ----------------*/
+  .main-container {
+      width: 500px;
+      height: 300px;
+      margin: 0 auto;
+      text-align: center;
+      background-color: hsla(233, 100%, 100%, 0.57);
+  }
+  .button-container {
+      width: 200px;
+      margin: 0 auto;
+      
+  }
+  .random-box {
+      display: sticky;
+      margin-top: 200px;
+  }
+  input {
+      opacity: 0;
+      width: 0px;
+      height: 0px;
+  }
+  label {
+      font-size: 45px;
+      font-family: 'Bebas Neue', cursive;
+      color: white;
+      background: #FDC830;  /* fallback for old browsers */
+      background: -webkit-linear-gradient(to right, #F37335, #FDC830);  /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to right, #F37335, #FDC830); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+  label:nth-child(1)
+  {
+    -webkit-box-shadow: 0px 0px 42px -3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 42px -3px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 42px -3px rgba(0,0,0,0.75);
+  }
+
+  body {
+      background-image: url(./img/thumb-1920-628497.jpg);
+      background-size: cover;
+  }
+  .players-names {
+    font-family: 'Oswald', sans-serif;
+    font-size: 25px;
+    color: #222222;
+    
+  }
+  .players {
+    font-family: 'Oswald', sans-serif;
+    font-size: 30px;
+    color: black;  
+  }
+  .players::after {
+    margin: 0 auto;
+    content: "";
+    display: block;
+    width: 200px;
+    height: 3px;
+    background-color: black;
+    transition: .5s;
+    opacity: 0.7;
+  }
+  .main-container:hover .players::after {
+      width: 400px;
+  }
+  .particles {
+      position: fixed;
+      background-image: url(./img/particles.gif);
+      background-size: contain;
+      width: 100%;
+      height: 100%;
+      opacity: 0.07;
+  }
